@@ -1,0 +1,60 @@
+#%RAML 1.0
+title: New API
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/190d3452-d002-4344-93b0-52db9d7d1931
+version: "1"
+protocols:
+  - HTTP
+  - HTTPS
+/flights:
+  get:
+    queryParameters:
+      Destinaion:
+        enum:
+          - SFO
+          - LAX
+          - CLED
+        type: string
+      Airlines:
+        enum:
+          - American
+          - Delta
+          - United
+        type: string
+    responses:
+      "200":
+        body:
+          application/json:
+            example:
+              strict: true
+              value:
+                "0":
+                  airline: United
+                  flightCode: ER38sd
+                  fromAirportCode: LAX
+                  toAirportCode: SFO
+                  departureDate: May 21, 2016
+                  emptySeats: 0
+                  totalSeats: 200
+                  price: 199
+                  planeType: Boeing 737
+                "1":
+                  airline: Delta
+                  flightCode: ER38sd
+                  fromAirportCode: CLE
+                  toAirportCode: SFO
+                  departureDate: May 21, 2016
+                  emptySeats: 0
+                  totalSeats: 200
+                  price: 199
+                  planeType: Boeing 737
+                "2":
+                  airline: American
+                  flightCode: ER38sd
+                  fromAirportCode: LAX
+                  toAirportCode: SFO
+                  departureDate: May 21, 2016
+                  emptySeats: 0
+                  totalSeats: 200
+                  price: 199
+                  planeType: Boeing 737
+            type: object
